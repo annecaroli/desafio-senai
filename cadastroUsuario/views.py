@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from cadastroUsuario.models import CadastroUsuario
+from cadastroUsuario.forms import CadastroForms
 
 
 def index(request):
@@ -12,7 +13,8 @@ def usuario(request, user_id):
     return render(request, 'cadastroUsuario/user.html', {'user': user})
 
 def cadastro_usuario(request):
-    return render(request, 'cadastroUsuario/cadastro-usuario.html')
+    form = CadastroForms()
+    return render(request, 'cadastroUsuario/cadastro-usuario.html', {"form": form})
 
 def editar_usuario(request):
     return render(request, 'cadastroUsuario/editar-usuario.html')

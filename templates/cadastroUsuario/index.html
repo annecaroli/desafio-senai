@@ -4,30 +4,25 @@
             <section class="conteudo">
                 <section class="galeria">
                     <div class="cards">
-                        <h2 class="cards__titulo">Listagem</h2>
-                        <!-- grid here -->
-                        <section class="galeria">
-                            <div class="cards">
-                                <ul class="cards__lista">
-                                    {% if cards %}
-                                    {% for user in cards %}
-                                    <li class="card">
-                                        <div class="card__info">
-                                            <p class="card__titulo">{{ user.nome }}</p>
-                                            <div class="card__texto">
-                                                <p class="card__descricao">{{ user.cpf }}</p>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    {% endfor %}
-                                    {% else %}
-                                    {% endif %}
-                                </ul>
-                            </div>
-                        </section>
+                        <h2 class="cards__titulo">Listagem de Usuários</h2>
+                        <ul class="cards__lista">
+                            {% if cards %}
+                            {% for item in cards %}
+                            <li class="card">
+                                <div class="card__info">
+                                    <p class="card__titulo">{{ item.nome }}</p>
+                                    <div class="card__texto">
+                                        <p class="card__descricao">{{ item.cpf }}</p>
+                                    </div>
+                                </div>
+                            </li>
+                            {% endfor %}
+                            {% else %}
+                            {% endif %}
+                        </ul>
                     </div>
                 </section>
             </section>
         </main>
     </div>
-    {% endblock %}
+{% endblock %}
