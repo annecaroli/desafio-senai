@@ -9,4 +9,10 @@ def index(request):
 
 def usuario(request, user_id):
     user = get_object_or_404(CadastroUsuario, pk=user_id)
-    return render(request, 'user.html', {'user': user})
+    return render(request, 'cadastroUsuario/user.html', {'user': user})
+
+def cadastro_usuario(request):
+    return render(request, 'cadastroUsuario/cadastro-usuario.html')
+
+def editar_usuario(request):
+    return render(request, 'cadastroUsuario/editar-usuario.html')
