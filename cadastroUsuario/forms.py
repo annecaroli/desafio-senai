@@ -24,8 +24,20 @@ class CadastroForms(forms.Form):
             }
         )
     )
-    
-    senha1=forms.CharField(
+
+    login=forms.CharField(
+        label='Login', 
+        required=True, 
+        max_length=100,
+        widget=forms.TextInput(
+            attrs={
+                'class': 'form-control',
+                'placeholder': 'Ex.: joaos',
+            }
+        )
+    )
+
+    senha=forms.CharField(
         label='Senha', 
         required=True, 
         max_length=15,
@@ -33,18 +45,6 @@ class CadastroForms(forms.Form):
             attrs={
                 'class': 'form-control',
                 'placeholder': 'Digite a senha',
-            }
-        ),
-    )
-
-    senha2=forms.CharField(
-        label='Confirme a senha', 
-        required=True, 
-        max_length=15,
-        widget=forms.PasswordInput(
-            attrs={
-                'class': 'form-control',
-                'placeholder': 'Digite a senha novamente',
             }
         ),
     )
