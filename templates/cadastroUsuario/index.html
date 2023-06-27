@@ -20,7 +20,30 @@
                 <section class="galeria">
                     <div class="cards">
                         <h2 class="cards__titulo">Cadastro de Usuário</h2>
+                        <!-- buttom here -->
+                        <div>
+                            <button type="submit" class="btn btn-success col-12" style="padding: top 5px;">Novo Usuário</button>
+                        </div>
                         <!-- grid here -->
+                        <section class="galeria">
+                            <div class="cards">
+                                <ul class="cards__lista">
+                                    {% if cards %}
+                                    {% for user in cards %}
+                                    <li class="card">
+                                        <div class="card__info">
+                                            <p class="card__titulo">{{ user.nome }}</p>
+                                            <div class="card__texto">
+                                                <p class="card__descricao">{{ user.cpf }}</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    {% endfor %}
+                                    {% else %}
+                                    {% endif %}
+                                </ul>
+                            </div>
+                        </section>
                     </div>
                 </section>
             </section>
