@@ -1,18 +1,14 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
-from cadastroUsuario.models import CadastroUsuario
-from cadastroUsuario.forms import CadastroForms
+from apps.cadastroUsuario.models import CadastroUsuario
+from apps.cadastroUsuario.forms import CadastroForms
 
 
 def index(request):
     users = CadastroUsuario.objects.all()
     return render(request, 'cadastroUsuario/index.html', {"cards": users})
 
-def usuario(request, user_id):
-    user = get_object_or_404(CadastroUsuario, pk=user_id)
-    return render(request, 'cadastroUsuario/user.html', {'user': user})
-
-def cadastro(request):
+def cadastrar(request):
     form = CadastroForms()
 
     if request.method == 'POST':
@@ -39,3 +35,6 @@ def cadastro(request):
 
 def editar(request):
     return render(request, 'cadastroUsuario/editar.html')
+
+def excluir(request):
+    return render(request, 'cadastroUsuario/excluir.html')

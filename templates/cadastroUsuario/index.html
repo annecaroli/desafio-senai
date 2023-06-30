@@ -1,4 +1,4 @@
-{% extends 'cadastroUsuario/base.html' %}
+{% extends 'shared/base.html' %}
 {% load static %}
 {% block content %}
             <section class="conteudo">
@@ -11,9 +11,16 @@
                             <li class="card">
                                 <div class="card__info">
                                     <p class="card__titulo">{{ item.nome }}</p>
-                                    <div class="card__texto">
-                                        <p class="card__descricao">{{ item.cpf }}</p>
-                                    </div>
+                                    <p class="card__titulo">{{ item.cpf }}</p>
+                                    <p class="card__titulo">{{ item.login }}</p>
+                                    <p class="card__titulo">
+                                        <div>
+                                            <button class="btn btn-success col-12" style="padding: top 5px;">Editar</button>
+                                        </div>
+                                        <div>
+                                            <button class="btn btn-success col-12" style="padding: top 5px;">Excluir</button>
+                                        </div>
+                                    </p>
                                 </div>
                             </li>
                             {% endfor %}
